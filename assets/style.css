@@ -15,7 +15,7 @@ body {
   place-items: center;
 }
 
-.conteudo-1 {
+.conteudo {
   width: 220px;
   display: flex;
   flex-direction: column;
@@ -62,32 +62,18 @@ p {
   width: 100%;
 }
 
-/* Página contador ===================================== */
-
-#box-contador-2 {
-  padding: 30px;
-}
-
-.conteudo-2 {
-  color: #21eb00;
-}
-
-#header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 70px;
-}
-
 .text {
+  color: rgba(192, 192, 192, 0.185);
   text-align: center;
   font-size: 50px;
-  color: rgba(192, 192, 192, 0.185);
+  margin-top: 30px;
 }
 
 #contagem {
   display: flex;
   justify-content: center;
   gap: 60px;
+  margin-top: -60px;
 }
 
 .tempo {

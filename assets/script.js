@@ -1,10 +1,10 @@
 const data = document.getElementById('input-data')
 const btnIniciar = document.getElementById('btn-iniciar')
-const btnReinicar = document.getElementById('btn-reiniciar')
 const displayContagem = document.getElementById('contagem')
+const text = document.querySelector('.text')
 
 displayContagem.style.opacity = '0'
-btnReinicar.style.opacity = '0'
+text.style.opacity = '0'
 
 btnIniciar.addEventListener('click', definirData)
 
@@ -24,30 +24,30 @@ function definirData() {
   setInterval(calcularDiferenca, 1000)
 }
 
-let contagem
+let diferencaTempo
 
 function calcularDiferenca() {
   displayContagem.style.opacity = '1'
-  btnReinicar.style.opacity = '1'
+  text.style.opacity = '1'
 
   let dataFinal = new Date(ano, mes, dia)
   let dataAtual = new Date()
 
-  contagem = dataFinal.getTime() - dataAtual.getTime()
+  diferencaTempo = dataFinal.getTime() - dataAtual.getTime()
 
   organizarContagem()
 }
 
-const diasRestantes = document.getElementById('num-dias')
-const horasRestantes = document.getElementById('num-horas')
-const minutosRestantes = document.getElementById('num-minutos')
-const segundosRestantes = document.getElementById('num-segundos')
+const dias = document.getElementById('num-dias')
+const horas = document.getElementById('num-horas')
+const minutos = document.getElementById('num-minutos')
+const segundos = document.getElementById('num-segundos')
 
 function organizarContagem() {
-  let diasRestantes = Math.floor(contagem / (24 * 60 * 60 * 1000))
-  let horasRestantes = Math.floor(contagem / (60 * 60 * 1000)) % 24
-  let minutosRestantes = Math.floor(contagem / (60 * 1000)) % 60
-  let segundosRestantes = Math.floor(contagem / 1000) % 60
+  let diasRestantes = Math.floor(diferencaTempo / (24 * 60 * 60 * 1000))
+  let horasRestantes = Math.floor(diferencaTempo / (60 * 60 * 1000)) % 24
+  let minutosRestantes = Math.floor(diferencaTempo / (60 * 1000)) % 60
+  let segundosRestantes = Math.floor(diferencaTempo / 1000) % 60
 
   diasRestantes = diasRestantes < 10 ? '0' + diasRestantes : diasRestantes
   horasRestantes = horasRestantes < 10 ? '0' + horasRestantes : horasRestantes
@@ -67,8 +67,8 @@ function organizarContagem() {
 }
 
 function iniciarContagem(tempo) {
-  diasRestantes.innerHTML = tempo[0]
-  horasRestantes.innerHTML = tempo[1]
-  minutosRestantes.innerHTML = tempo[2]
-  segundosRestantes.innerHTML = tempo[3]
+  dias.innerHTML = tempo[0]
+  horas.innerHTML = tempo[1]
+  minutos.innerHTML = tempo[2]
+  segundos.innerHTML = tempo[3]
 }
