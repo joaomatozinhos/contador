@@ -8,4 +8,4 @@ Project to train JavaScript.
 
 https://joaomatozinhos.github.io/contador/
 
-![image](https://user-images.githubusercontent.com/85374847/149038953-16f769e6-5844-4abd-aa54-636b007393da.png)
+![countdown](https://user-images.githubusercontent.com/85374847/149043922-e43c5794-8974-4c97-8d74-eac6f61c6e77.gif)
